@@ -9,14 +9,17 @@ app.post("/split", (req, res) => {
   const input = String(req.body.text || "");
   const N = 10;
   const len = input.length;
-  const parts = [];
+  const responseObject = {};
   const chunkSize = Math.ceil(len / N);
 
+  let chunkIndex = 1;
   for (let i = 0; i < len; i += chunkSize) {
-    parts.push(input.slice(i, i + chunkSize));
+    const chunk = input.slice(i, i + chunkSize);
+    responseObject[`chunk${chunkIndex}`] = chunk;
+    chunkIndex++;
   }
 
-  res.json({ parts });
+  res.json(responseObject);
 });
 
 app.listen(PORT, () => {
