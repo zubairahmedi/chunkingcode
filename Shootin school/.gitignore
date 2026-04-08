@@ -1,0 +1,6 @@
+# Local MCP secrets
+.env.mcp
+.env
+render-reporting-service/.env
+render-reporting-service/node_modules/
+render-reporting-service/output/

@@ -1,0 +1,17 @@
+{
+  "name": "shootin-school-reporting-service",
+  "version": "1.0.0",
+  "description": "Local-first PDF reporting pipeline for Shootin School weekly and monthly reports",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.104.0",
+    "playwright": "^1.53.0"
+  }
+}

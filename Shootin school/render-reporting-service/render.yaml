@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: shootin-school-reporting-service
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx playwright install chromium
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
