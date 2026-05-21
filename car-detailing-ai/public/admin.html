@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Logs</title>
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <h1>Admin Dashboard</h1>
+        <div class="nav-buttons">
+          <button id="navAnalytics" class="btn nav-btn active" data-tab="analytics" type="button">Analytics</button>
+          <button id="navLogs" class="btn nav-btn" data-tab="logs" type="button">Logs</button>
+          <button id="logoutBtn" class="btn ghost hidden" type="button">Logout</button>
+        </div>
+      </header>
+
+      <section id="loginCard" class="card">
+        <h2>Login</h2>
+        <form id="loginForm" class="grid">
+          <label>Email <input name="email" type="email" required /></label>
+          <label>Password <input name="password" type="password" required /></label>
+          <button class="btn" type="submit">Sign In</button>
+        </form>
+      </section>
+
+      <section id="analyticsCard" class="card hidden">
+        <h2>Dashboard Analytics</h2>
+        <div class="analytics-filters">
+          <label>Time Period <select id="analyticsPeriod">
+            <option value="24">Last 24 Hours</option>
+            <option value="72">Last 3 Days</option>
+            <option value="168" selected>Last 7 Days</option>
+            <option value="720">Last 30 Days</option>
+          </select></label>
+          <button id="refreshAnalytics" class="btn" type="button">Refresh</button>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Total Quotes</div>
+            <div class="metric-value" id="totalQuotesValue">—</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value" id="totalRevenueValue">—</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Avg. Quote Value</div>
+            <div class="metric-value" id="avgQuoteValue">—</div>
+          </div>
+        </div>
+
+        <div class="analytics-sections">
+          <section class="analytics-section">
+            <h3>Most Requested Services</h3>
+            <div id="topServicesContainer" class="data-table">Loading...</div>
+          </section>
+
+          <section class="analytics-section">
+            <h3>Popular Combinations (Vehicle | Dirt Level | Goal)</h3>
+            <div id="topCombinationsContainer" class="data-table">Loading...</div>
+          </section>
+
+          <section class="analytics-row">
+            <section class="analytics-section">
+              <h3>By Vehicle Type</h3>
+              <div id="topVehiclesContainer" class="data-table">Loading...</div>
+            </section>
+            <section class="analytics-section">
+              <h3>By Goal</h3>
+              <div id="topGoalsContainer" class="data-table">Loading...</div>
+            </section>
+            <section class="analytics-section">
+              <h3>By Dirt Level</h3>
+              <div id="topDirtLevelsContainer" class="data-table">Loading...</div>
+            </section>
+          </section>
+        </div>
+      </section>
+
+      <section id="logsCard" class="card hidden">
+        <h2>Recent Activity</h2>
+        <form id="filtersForm" class="filters">
+          <label>Hours <input name="sinceHours" type="number" min="1" max="168" value="24" /></label>
+          <label>Limit <input name="limit" type="number" min="1" max="1000" value="100" /></label>
+          <label>Type <input name="type" placeholder="request or booking_created" /></label>
+          <label>Contains <input name="contains" placeholder="gemini, /api/book" /></label>
+          <button class="btn" type="submit">Refresh</button>
+        </form>
+
+        <p id="meta"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Type</th>
+                <th>Path</th>
+                <th>Info</th>
+              </tr>
+            </thead>
+            <tbody id="logsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p id="status"></p>
+    </main>
+    <script src="/admin.js" defer></script>
+  </body>
+</html>

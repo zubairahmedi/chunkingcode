@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6fa;
+  color: #111827;
+}
+
+.wrap {
+  width: min(1120px, 96vw);
+  margin: 20px auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.nav-btn.active {
+  background: #005f73;
+}
+
+.nav-btn:not(.active) {
+  background: #9aa5b1;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dbe2ec;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.grid,
+.filters {
+  display: grid;
+  gap: 10px;
+}
+
+.filters {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: end;
+}
+
+.analytics-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+
+input,
+select {
+  border: 1px solid #c8d1de;
+  border-radius: 8px;
+  padding: 9px;
+  font-family: inherit;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 700;
+  background: #005f73;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.ghost {
+  background: #9aa5b1;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e5eaf1;
+  text-align: left;
+  padding: 8px;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+th {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.hidden {
+  display: none;
+}
+
+#status {
+  font-weight: 700;
+}
+
+/* Analytics Dashboard Styles */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #005f73 0%, #00a4a4 100%);
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 95, 115, 0.15);
+}
+
+.metric-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.analytics-sections {
+  display: grid;
+  gap: 24px;
+}
+
+.analytics-section {
+  border-top: 2px solid #dbe2ec;
+  padding-top: 16px;
+}
+
+.analytics-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #005f73;
+}
+
+.analytics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.analytics-row .analytics-section {
+  border-top: none;
+  padding-top: 0;
+  background: #f9fafc;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.analytics-row .analytics-section h3 {
+  margin-top: 0;
+}
+
+.data-table {
+  overflow-x: auto;
+}
+
+.data-table table {
+  width: 100%;
+  font-size: 12px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.data-table td {
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.data-table tr:hover {
+  background: #f9fafc;
+}
+
+.count-badge {
+  background: #e0f2f1;
+  color: #005f73;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.revenue-badge {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
