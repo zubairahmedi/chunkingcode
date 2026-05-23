@@ -424,7 +424,7 @@ app.post("/api/ai-quote", async (req, res) => {
 
     return res.json({
       source: "fallback",
-      reasoning: `AI call failed: ${error.message}`,
+      explanation: "AI request failed. Returned deterministic rules quote.",
       quote: fallback,
     });
   }
